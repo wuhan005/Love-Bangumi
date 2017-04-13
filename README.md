@@ -7,6 +7,7 @@ A software which can be used to watch bangumi more comfortably.
 作者我是B站鬼畜区UP主。之前在逛B站时偶然发现了B站的各类API，功能还挺全的。<br />
 接着便想可否做点有意思的东西... 然后就有了这个玩意。<br />
 我是希望能有一个软件可以让我快速的找到自己喜欢的番剧并且观看，看完后还能迅速找到那部番的高清壁纸啊之类的资源，甚至是可以直接看到大家对这部番的评价。<br />
+[项目页面](https://wuhan5.cc/love-bangumi/)<br >
 
 ## 项目功能
 * 拉取用户在B站订阅的番剧并排版
