@@ -10,10 +10,15 @@ A software which can be used to watch bangumi more comfortably.
 [项目页面](https://wuhan5.cc/love-bangumi/)<br >
 
 ## 项目功能
-* 拉取用户在B站订阅的番剧并排版
-* 软件内播放番剧
-* 从Pixiv搜索番剧的同人图
-* 从贴吧/知乎拉取番剧的用户讨论
+
+ - [X] 拉取用户在B站订阅的番剧并排版
+ - [ ] 软件内播放番剧
+ - [ ] 从Pixiv搜索番剧的同人图
+ - [ ] 从贴吧/知乎拉取番剧的用户讨论
+
+## Tips
+在`getBiliBangumi.cs`中，将`biliID`常量的值改为你的Bilibili ID，即可从你的Bilibili空间拉取番剧数据。<br />
+注意：Bilibili个人空间番剧信息应设置为公开状态。
 
 ## Change Log
 ### v0.0.2（2017/4/12 16:43）
@@ -23,6 +28,6 @@ A software which can be used to watch bangumi more comfortably.
 * 将Love-Bangumi部署到了Github上
 
 ## 联系我
-Email：524306184@qq.com<br />
+E-mail：524306184@qq.com<br />
 个人博客：[点击链接](https://wuhan5.cc/)<br />
 QQ：524306184<br />
