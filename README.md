@@ -12,7 +12,8 @@ A software which can be used to watch bangumi more comfortably.<br />
 
 ## 功能 Features
 
- - [X] 拉取用户在B站订阅的番剧并排版
+ - [X] 拉取用户在B站订阅的番剧并排版 ![Progress](http://progressed.io/bar/90?title=completed)
+ - [X] 从 QQ音乐API 获取番剧音乐 ![Progress](http://progressed.io/bar/65?title=developing)
  - [ ] 软件内播放番剧
  - [ ] 从Pixiv搜索番剧的同人图
  - [ ] 从贴吧/知乎拉取番剧的用户讨论
@@ -27,11 +28,16 @@ Clone from Github<br />
 注意：Bilibili个人空间番剧信息应设置为公开状态。
 
 ## 更改日志 Change Log
+### v0.0.3（2017/4/16 15:02）
+* 加入 Music Hunter 从 QQ音乐API 拉取番剧音乐
 ### v0.0.2（2017/4/12 16:43）
 * 修复了番剧详细页分集图片显示错误的问题
 ### v0.0.1（2017/4/12 14:00）
 * 撰写README.md
 * 将Love-Bangumi部署到了Github上
+
+## 贡献 Contribution
+QQ音乐API（PHP ver.）[metowolf/TencentMusicApi](https://github.com/metowolf/TencentMusicApi)<br />
 
 ## 联系我 About Me
 E-mail：524306184@qq.com<br />
