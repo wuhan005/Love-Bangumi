@@ -3,7 +3,6 @@
 A software which can be used to watch bangumi more comfortably.<br />
 
 [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/wuhan005/Love-Bangumi/master/LICENSE)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/cdnjs/cdnjs.svg)]()
 <br />
 
 作者我是B站鬼畜区UP主。之前在逛B站时偶然发现了B站的各类API，功能还挺全的。<br />
