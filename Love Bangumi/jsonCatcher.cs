@@ -20,8 +20,13 @@ namespace Love_Bangumi
 
             if (needEdit == true)   //If get the single bangumi infomation, bilibili will add a prefix & a suffix randomly.
             {
+
                 orginalJson = orginalJson.Replace("seasonListCallback(", "");
+                orginalJson = orginalJson.Replace("jsonCallback(", "");
+                orginalJson = orginalJson.Replace("callback(", "");
                 orginalJson = orginalJson.Replace(");", "");
+                orginalJson = orginalJson.Replace(")", "");
+
             }
                 jsonDecoder = JObject.Parse(orginalJson);   //Decode.
             

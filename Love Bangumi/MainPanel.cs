@@ -21,6 +21,7 @@ namespace Love_Bangumi
         {
             InitializeComponent();
             getBangumiInfo();
+            MusicHunter mh = new MusicHunter("only my railgun");
         }
 
         private void getBangumiInfo()
