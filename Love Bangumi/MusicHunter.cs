@@ -30,6 +30,7 @@ namespace Love_Bangumi
             key = (string)jsonData.json()["key"];
 
             music_url = "http://dl.stream.qqmusic.qq.com/M800" + media_mid + ".mp3?vkey=" + key + "&guid=" + key_orginal + "&fromtag=30";
+            //Open the music
             System.Diagnostics.Process.Start(music_url);
         }
     }

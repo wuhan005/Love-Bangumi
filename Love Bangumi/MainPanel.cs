@@ -40,7 +40,6 @@ namespace Love_Bangumi
 
         private void bangumiPicture_Click(object sender, EventArgs e)
         {
-            //System.Diagnostics.Process.Start(recentBangumi[4]);
             bangumiForm recentBangumiForm = new bangumiForm(uint.Parse(recentBangumi[5]));
             recentBangumiForm.Show();
         }
