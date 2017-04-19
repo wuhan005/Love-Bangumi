@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.IO;
+using CCWin;
 
 namespace Love_Bangumi
 {
-    public partial class MainPanel : Form
+    public partial class MainPanel : CCSkinMain
     {
         private string[] recentBangumi;
 

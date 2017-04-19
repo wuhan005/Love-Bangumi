@@ -63,6 +63,16 @@ namespace Love_Bangumi.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap blue_wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("blue_wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icon_end {
             get {
                 object obj = ResourceManager.GetObject("icon_end", resourceCulture);
