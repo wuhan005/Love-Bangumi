@@ -1,4 +1,4 @@
-# Love Bangumi 一个可以让你可以更加科学地补番的软件
+﻿# Love Bangumi 一个可以让你可以更加科学地补番的软件
 
 A software which can be used to watch bangumi more comfortably.<br />
 
@@ -13,7 +13,7 @@ A software which can be used to watch bangumi more comfortably.<br />
 ## 功能 Features
 
  - [X] 拉取用户在B站订阅的番剧并排版 ![Progress](http://progressed.io/bar/90?title=completed)
- - [X] 从 QQ音乐API 获取番剧音乐 ![Progress](http://progressed.io/bar/75?title=developing)
+ - [X] 从 QQ音乐API 获取番剧音乐 ![Progress](http://progressed.io/bar/85?title=developing)
  - [ ] 软件内播放番剧
  - [ ] 从Pixiv搜索番剧的同人图
  - [ ] 从贴吧/知乎拉取番剧的用户讨论
