@@ -19,15 +19,20 @@ namespace Love_Bangumi
         private string bCount;
         private string bDetail;
         private string bIsFinished;
+        private MusicHunter opHunter;
 
         public bangumiForm(uint bangumiID)
         {
             InitializeComponent();
 
             bID = bangumiID;
-            initBangumiData();
+            initBangumiData();  //Get the bangumi data from bilibili
             initEpisodes();
             this.Text = bName;
+
+            opHunter = new MusicHunter(bName);
+            this.bangumiOP.Text = opHunter.bSongName;
+
         }
 
         private void initEpisodes()
@@ -98,7 +103,6 @@ namespace Love_Bangumi
                 this.bangumiCount.Text = "(共 " + bCount + " 集)";
                 if (bIsFinished == "0") { this.iconIsFinished.Visible = false; }
                 this.bangumiDetail.Text = bDetail;
-                //MessageBox.Show(bEpisodes);
             }
             else
             {
@@ -106,5 +110,9 @@ namespace Love_Bangumi
             }
         }
 
+        private void bangumiOP_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(opHunter.bSongURL);
+        }
     }
 }

@@ -26,10 +26,11 @@ namespace Love_Bangumi
         {
             //Get music media_mid
             sWord = keyword + " OP";    //Get the bangumi OP
-            jsonData = new jsonCatcher("http://c.y.qq.com/soso/fcgi-bin/search_cp?p=1&n=1&w=" + keyword + "&aggr=1&lossless=1&cr=1",true);
-            media_mid = (string)jsonData.json()["data"]["song"]["list"][0]["media_mid"];
+            jsonData = new jsonCatcher("http://c.y.qq.com/soso/fcgi-bin/search_cp?p=1&n=3&w=" + keyword + "&aggr=1&lossless=1&cr=1",true);
+            media_mid = (string)jsonData.json()["data"]["song"]["list"][1]["media_mid"];
 
-            bSongName = (string)jsonData.json()["data"]["song"]["list"][0]["songname"];     //Get the song name
+            bSongName = (string)jsonData.json()["data"]["song"]["list"][1]["songname"];     //Get the song name
+            bSongName = bSongName.Replace("(日语", "");                                    //Delete the useless word.
 
             //Get key
             jsonData = new jsonCatcher("https://c.y.qq.com/base/fcgi-bin/fcg_musicexpress.fcg?json=3&guid=" + key_orginal,true);
@@ -38,6 +39,7 @@ namespace Love_Bangumi
             music_url = "http://dl.stream.qqmusic.qq.com/M800" + media_mid + ".mp3?vkey=" + key + "&guid=" + key_orginal + "&fromtag=30";
 
             bSongURL = music_url;
+
             //System.Diagnostics.Process.Start(music_url);      //Open the music
 
             

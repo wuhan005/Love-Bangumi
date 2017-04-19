@@ -33,6 +33,7 @@
             this.bangumiName = new System.Windows.Forms.Label();
             this.bangumiPicture = new System.Windows.Forms.PictureBox();
             this.bangumiCount = new System.Windows.Forms.Label();
+            this.bangumiOP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconIsFinished)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangumiPicture)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +89,18 @@
             this.bangumiCount.Size = new System.Drawing.Size(82, 23);
             this.bangumiCount.TabIndex = 12;
             // 
+            // bangumiOP
+            // 
+            this.bangumiOP.BackColor = System.Drawing.Color.Transparent;
+            this.bangumiOP.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bangumiOP.ForeColor = System.Drawing.Color.White;
+            this.bangumiOP.Location = new System.Drawing.Point(642, 54);
+            this.bangumiOP.Name = "bangumiOP";
+            this.bangumiOP.Size = new System.Drawing.Size(264, 32);
+            this.bangumiOP.TabIndex = 13;
+            this.bangumiOP.Text = "OP: ";
+            this.bangumiOP.Click += new System.EventHandler(this.bangumiOP_Click);
+            // 
             // bangumiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -96,6 +109,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 20);
             this.BackgroundImage = global::Love_Bangumi.Properties.Resources.wallpaper02;
             this.ClientSize = new System.Drawing.Size(984, 541);
+            this.Controls.Add(this.bangumiOP);
             this.Controls.Add(this.bangumiCount);
             this.Controls.Add(this.bangumiDetail);
             this.Controls.Add(this.iconIsFinished);
@@ -120,5 +134,6 @@
         private System.Windows.Forms.Label bangumiName;
         private System.Windows.Forms.PictureBox bangumiPicture;
         private System.Windows.Forms.Label bangumiCount;
+        private System.Windows.Forms.Label bangumiOP;
     }
 }
