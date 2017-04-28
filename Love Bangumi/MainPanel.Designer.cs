@@ -35,13 +35,17 @@ namespace Love_Bangumi
             this.bangumiName = new CCWin.SkinControl.SkinLabel();
             this.iconIsFinished = new System.Windows.Forms.PictureBox();
             this.bangumiDetail = new System.Windows.Forms.Label();
+            this.UserName = new System.Windows.Forms.Label();
+            this.UserFace = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bangumiPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconIsFinished)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserFace)).BeginInit();
             this.SuspendLayout();
             // 
             // bangumiPicture
             // 
-            this.bangumiPicture.Location = new System.Drawing.Point(15, 73);
+            this.bangumiPicture.BackColor = System.Drawing.Color.Transparent;
+            this.bangumiPicture.Location = new System.Drawing.Point(22, 147);
             this.bangumiPicture.Name = "bangumiPicture";
             this.bangumiPicture.Size = new System.Drawing.Size(150, 200);
             this.bangumiPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -54,8 +58,8 @@ namespace Love_Bangumi
             this.recentFollowBangumi.AutoSize = true;
             this.recentFollowBangumi.BackColor = System.Drawing.Color.Transparent;
             this.recentFollowBangumi.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.recentFollowBangumi.ForeColor = System.Drawing.Color.White;
-            this.recentFollowBangumi.Location = new System.Drawing.Point(-1, 27);
+            this.recentFollowBangumi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.recentFollowBangumi.Location = new System.Drawing.Point(9, 111);
             this.recentFollowBangumi.Name = "recentFollowBangumi";
             this.recentFollowBangumi.Size = new System.Drawing.Size(134, 31);
             this.recentFollowBangumi.TabIndex = 4;
@@ -67,8 +71,8 @@ namespace Love_Bangumi
             this.bangumiName.BackColor = System.Drawing.Color.Transparent;
             this.bangumiName.BorderColor = System.Drawing.Color.White;
             this.bangumiName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.bangumiName.ForeColor = System.Drawing.Color.White;
-            this.bangumiName.Location = new System.Drawing.Point(15, 279);
+            this.bangumiName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.bangumiName.Location = new System.Drawing.Point(18, 353);
             this.bangumiName.Name = "bangumiName";
             this.bangumiName.Size = new System.Drawing.Size(150, 20);
             this.bangumiName.TabIndex = 5;
@@ -79,7 +83,7 @@ namespace Love_Bangumi
             // 
             this.iconIsFinished.BackColor = System.Drawing.Color.Transparent;
             this.iconIsFinished.Image = global::Love_Bangumi.Properties.Resources.icon_end;
-            this.iconIsFinished.Location = new System.Drawing.Point(157, 281);
+            this.iconIsFinished.Location = new System.Drawing.Point(160, 355);
             this.iconIsFinished.Name = "iconIsFinished";
             this.iconIsFinished.Size = new System.Drawing.Size(18, 18);
             this.iconIsFinished.TabIndex = 6;
@@ -89,19 +93,42 @@ namespace Love_Bangumi
             // 
             this.bangumiDetail.BackColor = System.Drawing.Color.Transparent;
             this.bangumiDetail.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.bangumiDetail.ForeColor = System.Drawing.Color.White;
-            this.bangumiDetail.Location = new System.Drawing.Point(12, 302);
+            this.bangumiDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.bangumiDetail.Location = new System.Drawing.Point(18, 382);
             this.bangumiDetail.Name = "bangumiDetail";
             this.bangumiDetail.Size = new System.Drawing.Size(148, 51);
             this.bangumiDetail.TabIndex = 7;
+            // 
+            // UserName
+            // 
+            this.UserName.BackColor = System.Drawing.Color.Transparent;
+            this.UserName.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.UserName.Location = new System.Drawing.Point(87, 47);
+            this.UserName.Name = "UserName";
+            this.UserName.Size = new System.Drawing.Size(160, 31);
+            this.UserName.TabIndex = 8;
+            this.UserName.Text = "UserName";
+            // 
+            // UserFace
+            // 
+            this.UserFace.BackColor = System.Drawing.Color.Transparent;
+            this.UserFace.Location = new System.Drawing.Point(21, 31);
+            this.UserFace.Name = "UserFace";
+            this.UserFace.Size = new System.Drawing.Size(60, 60);
+            this.UserFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserFace.TabIndex = 9;
+            this.UserFace.TabStop = false;
             // 
             // MainPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::Love_Bangumi.Properties.Resources.wallpaper;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.BackgroundImage = global::Love_Bangumi.Properties.Resources.bg_MainPanel;
+            this.ClientSize = new System.Drawing.Size(885, 560);
+            this.Controls.Add(this.UserFace);
+            this.Controls.Add(this.UserName);
             this.Controls.Add(this.bangumiDetail);
             this.Controls.Add(this.iconIsFinished);
             this.Controls.Add(this.bangumiName);
@@ -118,6 +145,7 @@ namespace Love_Bangumi
             this.TitleColor = System.Drawing.Color.White;
             ((System.ComponentModel.ISupportInitialize)(this.bangumiPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconIsFinished)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserFace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +157,7 @@ namespace Love_Bangumi
         private SkinLabel bangumiName;
         private System.Windows.Forms.PictureBox iconIsFinished;
         private System.Windows.Forms.Label bangumiDetail;
+        private System.Windows.Forms.Label UserName;
+        private System.Windows.Forms.PictureBox UserFace;
     }
 }

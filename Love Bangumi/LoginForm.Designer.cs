@@ -70,8 +70,8 @@
 
         #endregion
 
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button1;
+        
+        
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox passwdTextBox;
         private System.Windows.Forms.Label label1;

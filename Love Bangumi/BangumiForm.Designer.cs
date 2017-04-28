@@ -77,6 +77,7 @@
             // 
             // bangumiPicture
             // 
+            this.bangumiPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bangumiPicture.Location = new System.Drawing.Point(100, 52);
             this.bangumiPicture.Name = "bangumiPicture";
             this.bangumiPicture.Size = new System.Drawing.Size(150, 200);
@@ -130,7 +131,7 @@
             this.tabControl.PageNorml = null;
             this.tabControl.PageNormlTxtColor = System.Drawing.Color.White;
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(941, 323);
+            this.tabControl.Size = new System.Drawing.Size(992, 323);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 14;
             // 
@@ -143,7 +144,7 @@
             this.pageVideo.Location = new System.Drawing.Point(0, 36);
             this.pageVideo.Name = "pageVideo";
             this.pageVideo.Padding = new System.Windows.Forms.Padding(3);
-            this.pageVideo.Size = new System.Drawing.Size(941, 287);
+            this.pageVideo.Size = new System.Drawing.Size(992, 287);
             this.pageVideo.TabIndex = 0;
             this.pageVideo.TabItemImage = null;
             this.pageVideo.Text = "分集";
@@ -155,7 +156,7 @@
             this.pageMusic.Location = new System.Drawing.Point(0, 36);
             this.pageMusic.Name = "pageMusic";
             this.pageMusic.Padding = new System.Windows.Forms.Padding(3);
-            this.pageMusic.Size = new System.Drawing.Size(941, 287);
+            this.pageMusic.Size = new System.Drawing.Size(992, 287);
             this.pageMusic.TabIndex = 1;
             this.pageMusic.TabItemImage = null;
             this.pageMusic.Text = "音乐";

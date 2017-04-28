@@ -61,6 +61,7 @@
     <Compile Include="BangumiForm.Designer.cs">
       <DependentUpon>BangumiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="getUserInfo.cs" />
     <Compile Include="jsonCatcher.cs" />
     <Compile Include="getBiliBangumi.cs" />
     <Compile Include="LoginForm.cs">
@@ -125,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resource\blue_wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\bg_MainPanel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

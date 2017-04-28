@@ -17,12 +17,14 @@ namespace Love_Bangumi
     public partial class MainPanel : CCSkinMain
     {
         private string[] recentBangumi;
-
+        private getUserInfo userInfo = new getUserInfo(3788683);
         public MainPanel()
         {
             InitializeComponent();
             getBangumiInfo();
             MusicHunter mh = new MusicHunter("only my railgun");
+            this.UserName.Text = userInfo.data["UserName"];
+            this.UserFace.ImageLocation = userInfo.data["FaceURL"];
         }
 
         private void getBangumiInfo()
@@ -44,5 +46,6 @@ namespace Love_Bangumi
             bangumiForm recentBangumiForm = new bangumiForm(uint.Parse(recentBangumi[5]));
             recentBangumiForm.Show();
         }
+
     }
 }

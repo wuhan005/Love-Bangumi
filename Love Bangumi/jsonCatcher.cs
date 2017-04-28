@@ -13,9 +13,12 @@ namespace Love_Bangumi
     {
         private string orginalJson;    //The orginal Json.
         private JObject jsonDecoder = new JObject(); //The json which was decoded.
+        private uint type;//type 0:Normal 1:UserInfo(Add Referer)
 
-        public jsonCatcher(string apiURL,Boolean needEdit = false)
+        public jsonCatcher(string apiURL,Boolean needEdit = false,uint type = 0)
         {
+            this.type = type;
+
             orginalJson = link(apiURL); //Get the json from the Internet.
 
             if (needEdit == true)   //If get the single bangumi infomation, bilibili will add a prefix & a suffix randomly.
@@ -40,6 +43,7 @@ namespace Love_Bangumi
         {
             WebClient webConn = new WebClient();
             webConn.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+            //webConn.Headers.Add("Referer"，"https://space.bilibili.com/");
             // Add a user agent header 
             Stream data = webConn.OpenRead(url);
             StreamReader reader = new StreamReader(data, Encoding.UTF8);
