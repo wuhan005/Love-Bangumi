@@ -11,25 +11,33 @@ using Newtonsoft.Json.Linq;
 using System.Net;
 using System.IO;
 using CCWin;
+using System.Drawing.Drawing2D;
 
 namespace Love_Bangumi
 {
     public partial class MainPanel : CCSkinMain
     {
         private string[] recentBangumi;
-        private getUserInfo userInfo = new getUserInfo(3788683);
+        private static uint biliID = 3788683;
+        private getUserInfo userInfo = new getUserInfo(biliID);
+        private GraphicsPath circlePath = new GraphicsPath();   //Used to cut the user face to circle.
+
         public MainPanel()
         {
             InitializeComponent();
             getBangumiInfo();
-            MusicHunter mh = new MusicHunter("only my railgun");
             this.UserName.Text = userInfo.data["UserName"];
+            this.UserSign.Text = userInfo.data["Sign"];
+
             this.UserFace.ImageLocation = userInfo.data["FaceURL"];
+            circlePath.AddArc(UserFace.DisplayRectangle, 0, 360);
+            this.UserFace.Region = new Region(circlePath);
         }
+
 
         private void getBangumiInfo()
         {
-            getBiliBangumi getBangumi = new getBiliBangumi();
+            getBiliBangumi getBangumi = new getBiliBangumi(biliID);
             recentBangumi = getBangumi.recentBangumi();
 
             this.bangumiName.Text = recentBangumi[0];
@@ -46,6 +54,7 @@ namespace Love_Bangumi
             bangumiForm recentBangumiForm = new bangumiForm(uint.Parse(recentBangumi[5]));
             recentBangumiForm.Show();
         }
+
 
     }
 }

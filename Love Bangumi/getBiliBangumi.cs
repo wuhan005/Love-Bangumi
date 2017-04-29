@@ -13,8 +13,9 @@ public class getBiliBangumi
     private static uint biliID = 3788683;   //User's Bilibili ID. Pay attation this is a UINT!!!
     private jsonCatcher recentBangumiJson;
 
-    public getBiliBangumi()
+    public getBiliBangumi(uint uid)
 	{
+        biliID = uid;
         recentBangumiJson = new jsonCatcher("http://space.bilibili.com/ajax/Bangumi/getList?mid=" + biliID.ToString() + "&page=1");
         
         if ((string)recentBangumiJson.json()["status"] == "True")    //True is connect OK, not "true". Pay attation!!

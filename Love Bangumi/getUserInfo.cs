@@ -45,6 +45,7 @@ namespace Love_Bangumi
 
             data.Add("UserName", (string)jsonDecoder["data"]["name"]);
             data.Add("FaceURL", (string)jsonDecoder["data"]["face"]);
+            data.Add("Sign", (string)jsonDecoder["data"]["sign"]);
         }
     }
 }

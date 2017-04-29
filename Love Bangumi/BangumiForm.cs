@@ -78,7 +78,7 @@ namespace Love_Bangumi
                 this.pageVideo.Controls.Add(eCountNumber);
                 this.pageVideo.Controls.Add(ePicture);
                 this.pageVideo.Controls.Add(eBlankGround);
-
+                //MessageBox.Show((string)bangumiInfoJson.json()["result"]["episodes"]);
                 eBlankGround.Click += new EventHandler(toWebBangumi_Click);
 
                 }
