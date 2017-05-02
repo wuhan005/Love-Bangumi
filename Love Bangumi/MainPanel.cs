@@ -17,6 +17,8 @@ namespace Love_Bangumi
 {
     public partial class MainPanel : CCSkinMain
     {
+        [DLLImport("CSkin.dll")];
+        
         private string[] recentBangumi;
         private static uint biliID = 3788683;
         private getUserInfo userInfo = new getUserInfo(biliID);
