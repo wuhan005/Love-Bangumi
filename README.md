@@ -1,9 +1,9 @@
 ﻿# Love Bangumi 一个可以让你可以更加科学地补番的软件
 
-A software which can be used to watch bangumi more comfortably.<br />
-
-[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/wuhan005/Love-Bangumi/master/LICENSE)
+A software which can be used to watch bangumi more comfortably.[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/wuhan005/Love-Bangumi/master/LICENSE)
 <br />
+
+[![AppVeyor](https://img.shields.io/appveyor/ci/wuhan005/Love-Bangumi/master.svg)](https://ci.appveyor.com/project/wuhan005/love-bangumi/)    
 
 作者我是B站鬼畜区UP主。之前在逛B站时偶然发现了B站的各类API，功能还挺全的。<br />
 接着便想可否做点有意思的东西... 然后就有了这个玩意。<br />
