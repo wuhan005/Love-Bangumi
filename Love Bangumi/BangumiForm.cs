@@ -92,7 +92,7 @@ namespace Love_Bangumi
 
         private void initBangumiData()
         {
-            bangumiInfoJson = new jsonCatcher("http://bangumi.bilibili.com/jsonp/seasoninfo/" + bID.ToString() + ".ver", true);
+            bangumiInfoJson = new jsonCatcher("http://bangumi.bilibili.com/jsonp/seasoninfo/" + bID.ToString() + ".ver?callback=seasonListCallback&jsonp=jsonp&_=1493791405048", true);
 
             if ((string)bangumiInfoJson.json()["message"] == "success")
             {
