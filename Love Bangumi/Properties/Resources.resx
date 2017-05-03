@@ -121,8 +121,8 @@
   <data name="blue_wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\blue_wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wallpaper02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\wallpaper02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_mainpage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\icon_mainpage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="page_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\page_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,16 +133,19 @@
   <data name="icon_end" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\icon_end.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wallpaper01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\wallpaper01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wallpaper02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\wallpaper02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_MainPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\bg_MainPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_mainpage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resource\icon_mainpage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wallpaper01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\wallpaper01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resource\icon_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resource\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

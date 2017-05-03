@@ -61,6 +61,7 @@ namespace Love_Bangumi
                 ePicture.Size = new Size(96, 60);
                 ePicture.ImageLocation = (string)bangumiInfoJson.json()["result"]["episodes"][count - 1 - i]["cover"];
                 ePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                ePicture.InitialImage = Properties.Resources.loading;
 
                 eName.ArtTextStyle = ArtTextStyle.None;
                 eName.Location = new Point(105 + i % 4 * 230, 28 + row * 80);

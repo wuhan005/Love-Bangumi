@@ -12,7 +12,6 @@ using System.Net;
 using System.IO;
 using CCWin;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 
 namespace Love_Bangumi
 {

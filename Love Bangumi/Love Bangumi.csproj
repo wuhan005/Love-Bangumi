@@ -38,7 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CSkin">
-     <HintPath>..\Love Bangumi\CSkin.dll</HintPath>
+      <HintPath>..\Love Bangumi\CSkin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -138,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resource\icon_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

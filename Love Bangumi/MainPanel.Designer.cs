@@ -31,7 +31,7 @@ namespace Love_Bangumi
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPanel));
-            this.bangumiPicture = new System.Windows.Forms.PictureBox();
+            this.bangumiPicture = new CCWin.SkinControl.SkinPictureBox();
             this.recentFollowBangumi = new System.Windows.Forms.Label();
             this.bangumiName = new CCWin.SkinControl.SkinLabel();
             this.iconIsFinished = new System.Windows.Forms.PictureBox();
@@ -51,6 +51,7 @@ namespace Love_Bangumi
             // bangumiPicture
             // 
             this.bangumiPicture.BackColor = System.Drawing.Color.Transparent;
+            this.bangumiPicture.InitialImage = global::Love_Bangumi.Properties.Resources.loading;
             this.bangumiPicture.Location = new System.Drawing.Point(22, 147);
             this.bangumiPicture.Name = "bangumiPicture";
             this.bangumiPicture.Size = new System.Drawing.Size(150, 200);
@@ -119,6 +120,7 @@ namespace Love_Bangumi
             // UserFace
             // 
             this.UserFace.BackColor = System.Drawing.Color.Transparent;
+            this.UserFace.InitialImage = global::Love_Bangumi.Properties.Resources.loading;
             this.UserFace.Location = new System.Drawing.Point(21, 25);
             this.UserFace.Name = "UserFace";
             this.UserFace.Size = new System.Drawing.Size(60, 60);
@@ -222,7 +224,7 @@ namespace Love_Bangumi
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox bangumiPicture;
+        private CCWin.SkinControl.SkinPictureBox bangumiPicture;
         private System.Windows.Forms.Label recentFollowBangumi;
         private SkinLabel bangumiName;
         private System.Windows.Forms.PictureBox iconIsFinished;
