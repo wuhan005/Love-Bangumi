@@ -19,6 +19,7 @@ namespace Love_Bangumi
     {
         private string[] recentBangumi;
         private static uint biliID = 3788683;
+        private bangumiTimeLine timeLine = new bangumiTimeLine();
         private getUserInfo userInfo = new getUserInfo(biliID);
         private GraphicsPath circlePath = new GraphicsPath();   //Used to cut the user face to circle.
 
