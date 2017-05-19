@@ -11,7 +11,7 @@ namespace Love_Bangumi
         private jsonCatcher timeLineJson = new jsonCatcher("http://bangumi.bilibili.com/api/timeline_v2_global", true);     //Bilibili API.
         private JToken timeLineData;
 
-        public ArrayList TimeLine = new ArrayList();  //Timeline Array. 7 elements => 7 days of a week.
+        public Dictionary<string,string>[][] TimeLine = new Dictionary<string,string>[6][];  //Timeline Array. 7 elements => 7 days of a week.
         private int bangumiCount;
 
         public bangumiTimeLine()
@@ -19,7 +19,7 @@ namespace Love_Bangumi
             timeLineData = timeLineJson.json()["result"];
             bangumiCount = 2;
 
-            ArrayList singleDayBangumi = new ArrayList();    //One day's all bangumi
+            //ArrayList singleDayBangumi = new ArrayList();    //One day's all bangumi
 
             for (int i = 0; i < bangumiCount; i++)
             {
@@ -36,12 +36,13 @@ namespace Love_Bangumi
                 singleBangumi.Add("Attention",(string)timeLineData[bangumiCount]["attention"]);
                 singleBangumi.Add("Play_Count",(string)timeLineData[bangumiCount]["play_count"]);
 
-                singleDayBangumi.Add(singleBangumi);
-                //TimeLine[weekNumber] = singleDayBangumi;
-                
+                //singleDayBangumi.Add(singleBangumi);
+
+                //MessageBox.Show(TimeLine[0].ToString());
+                //TimeLine[weekNumber][].Add
+
             }
-           // MessageBox.Show((string)((Dictionary<string,string>)singleDayBangumi[0])["Name"]);
-          //  MessageBox.Show((string)((Dictionary<string,string>)singleDayBangumi[1])["Name"]);
+            //MessageBox.Show((string)(TimeLine[0][0]["Name"]));
 
         }
 
