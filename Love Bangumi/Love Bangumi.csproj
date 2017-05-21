@@ -62,6 +62,7 @@
       <DependentUpon>BangumiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="bangumiTimeLine.cs" />
+    <Compile Include="getPixiv.cs" />
     <Compile Include="getUserInfo.cs" />
     <Compile Include="jsonCatcher.cs" />
     <Compile Include="getBiliBangumi.cs" />

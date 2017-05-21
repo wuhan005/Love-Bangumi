@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCWin;
 using CCWin.SkinControl;
+using System.Net;
+using System.IO;
 
 namespace Love_Bangumi
 {
@@ -17,11 +19,13 @@ namespace Love_Bangumi
         private jsonCatcher bangumiInfoJson;
         private uint bID;
         private string bName;
+        private string bJpName;     //Bangumi's Japanese Name.
         private string bPicture;
         private string bCount;
         private string bDetail;
         private string bIsFinished;
         private MusicHunter opHunter;
+        private getPixiv pixiv;
 
         public bangumiForm(uint bangumiID)
         {
@@ -35,6 +39,17 @@ namespace Love_Bangumi
             opHunter = new MusicHunter(bName);
             this.bangumiOP.Text = opHunter.bSongName;
 
+            pixiv = new getPixiv(this.bJpName);
+
+            HttpWebRequest pixivReq = (HttpWebRequest)WebRequest.Create(new Uri((string)pixiv.pic()["illusts"][0]["image_urls"]["square_medium"]));
+            pixivReq.Method = "GET";
+            pixivReq.Accept = "image/png, image/svg+xml, image/*;q=0.8, */*;q=0.5";
+            pixivReq.Referer = "https://i2.pixiv.net/";
+
+            HttpWebResponse pixivResp = (HttpWebResponse)pixivReq.GetResponse();
+            Stream pixivStream = pixivResp.GetResponseStream();
+
+            pixivPic.Image = Image.FromStream(pixivStream); 
         }
 
         private void initEpisodes()
@@ -98,6 +113,7 @@ namespace Love_Bangumi
             if ((string)bangumiInfoJson.json()["message"] == "success")
             {
                 bName = (string)bangumiInfoJson.json()["result"]["bangumi_title"];
+                bJpName = (string)bangumiInfoJson.json()["result"]["jp_title"];
                 bPicture = (string)bangumiInfoJson.json()["result"]["cover"];
                 bCount = (string)bangumiInfoJson.json()["result"]["total_count"];
                 bDetail = (string)bangumiInfoJson.json()["result"]["evaluate"];

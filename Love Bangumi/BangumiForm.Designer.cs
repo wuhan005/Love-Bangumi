@@ -38,9 +38,13 @@
             this.tabControl = new CCWin.SkinControl.SkinTabControl();
             this.pageVideo = new CCWin.SkinControl.SkinTabPage();
             this.pageMusic = new CCWin.SkinControl.SkinTabPage();
+            this.pagePic = new CCWin.SkinControl.SkinTabPage();
+            this.pixivPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconIsFinished)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangumiPicture)).BeginInit();
             this.tabControl.SuspendLayout();
+            this.pagePic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pixivPic)).BeginInit();
             this.SuspendLayout();
             // 
             // bangumiDetail
@@ -114,6 +118,7 @@
             this.tabControl.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.tabControl.Controls.Add(this.pageVideo);
             this.tabControl.Controls.Add(this.pageMusic);
+            this.tabControl.Controls.Add(this.pagePic);
             this.tabControl.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl.HeadBack = null;
             this.tabControl.ImgTxtOffset = new System.Drawing.Point(0, 0);
@@ -130,7 +135,7 @@
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
             this.tabControl.PageNormlTxtColor = System.Drawing.Color.White;
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedIndex = 2;
             this.tabControl.Size = new System.Drawing.Size(992, 323);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 14;
@@ -162,6 +167,26 @@
             this.pageMusic.Text = "音乐";
             this.pageMusic.UseVisualStyleBackColor = true;
             // 
+            // pagePic
+            // 
+            this.pagePic.BackColor = System.Drawing.Color.Transparent;
+            this.pagePic.Controls.Add(this.pixivPic);
+            this.pagePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pagePic.Location = new System.Drawing.Point(0, 36);
+            this.pagePic.Name = "pagePic";
+            this.pagePic.Size = new System.Drawing.Size(992, 287);
+            this.pagePic.TabIndex = 2;
+            this.pagePic.TabItemImage = null;
+            this.pagePic.Text = "插画";
+            // 
+            // pixivPic
+            // 
+            this.pixivPic.Location = new System.Drawing.Point(61, 32);
+            this.pixivPic.Name = "pixivPic";
+            this.pixivPic.Size = new System.Drawing.Size(100, 100);
+            this.pixivPic.TabIndex = 0;
+            this.pixivPic.TabStop = false;
+            // 
             // bangumiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -190,6 +215,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconIsFinished)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangumiPicture)).EndInit();
             this.tabControl.ResumeLayout(false);
+            this.pagePic.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pixivPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +232,7 @@
         private CCWin.SkinControl.SkinTabControl tabControl;
         private CCWin.SkinControl.SkinTabPage pageVideo;
         private CCWin.SkinControl.SkinTabPage pageMusic;
+        private CCWin.SkinControl.SkinTabPage pagePic;
+        private System.Windows.Forms.PictureBox pixivPic;
     }
 }
