@@ -184,6 +184,7 @@
             this.pixivPic.Location = new System.Drawing.Point(61, 32);
             this.pixivPic.Name = "pixivPic";
             this.pixivPic.Size = new System.Drawing.Size(100, 100);
+            this.pixivPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pixivPic.TabIndex = 0;
             this.pixivPic.TabStop = false;
             // 
