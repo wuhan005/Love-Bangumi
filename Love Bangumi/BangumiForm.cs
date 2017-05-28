@@ -11,6 +11,7 @@ using CCWin;
 using CCWin.SkinControl;
 using System.Net;
 using System.IO;
+using System.Collections;
 
 namespace Love_Bangumi
 {
@@ -25,7 +26,9 @@ namespace Love_Bangumi
         private string bDetail;
         private string bIsFinished;
         private MusicHunter opHunter;
+
         private getPixiv pixiv;
+        private int nowPage = 0;    //start from 0!!
 
         public bangumiForm(uint bangumiID)
         {
@@ -37,19 +40,8 @@ namespace Love_Bangumi
             this.Text = bName;
 
             opHunter = new MusicHunter(bName);
-            this.bangumiOP.Text = opHunter.bSongName;
 
-            pixiv = new getPixiv(this.bJpName);
-
-            HttpWebRequest pixivReq = (HttpWebRequest)WebRequest.Create(new Uri((string)pixiv.pic()["illusts"][0]["image_urls"]["square_medium"]));
-            pixivReq.Method = "GET";
-            pixivReq.Accept = "image/png, image/svg+xml, image/*;q=0.8, */*;q=0.5";
-            pixivReq.Referer = "https://i2.pixiv.net/";
-
-            HttpWebResponse pixivResp = (HttpWebResponse)pixivReq.GetResponse();
-            Stream pixivStream = pixivResp.GetResponseStream();
-
-            pixivPic.Image = Image.FromStream(pixivStream); 
+            pixivInit();
         }
 
         private void initEpisodes()
@@ -131,9 +123,65 @@ namespace Love_Bangumi
             }
         }
 
+        //Get the bangumi pictures from pixiv!
+        private void pixivInit()
+        {
+
+
+            pixiv = new getPixiv(this.bJpName);     //Search this bangumi's japanese name.
+            ArrayList pixivID = pixiv.pic();        //Get the pictures' pixiv ID.
+     
+            PictureBox[] pixivPics;
+            if (pixivID.Count >= 16)                //If the count of the pictures is no more than 16.
+            {
+                pixivPics = new PictureBox[16];
+            }
+            else
+            {
+                pixivPics = new PictureBox[pixivID.Count];
+            }
+            int row = 0;   //2 rows / 16 pictures
+            for (int i = 0; i < pixivPics.Length; i++)
+            {
+                if (i % (pixivPics.Length/2) == 0 && i != 0)
+                {
+                    row++;
+                }
+
+                //Init the UI
+                pixivPics[i] = new PictureBox();
+                pixivPics[i].Name = "picBox" + Convert.ToString(i + 1);
+                pixivPics[i].Size = new Size(100, 100);
+                pixivPics[i].Location = new Point(70 + i%(pixivPics.Length/2)* 105, 40 + row * 105);
+                pixivPics[i].SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //Get the pic detail info
+                jsonCatcher pictureCatcher = new jsonCatcher("https://api.imjad.cn/pixiv/v1/?type=illust&id=" + pixivID[i]);
+                Console.WriteLine(pixivID[i]);
+
+                ////Load Pic
+
+                ///
+
+                pixivPics[i].ImageLocation = (string)pictureCatcher.json()["response"][0]["image_urls"]["px_128x128"];
+                this.pagePic.Controls.Add(pixivPics[i]);
+            }
+
+            int pageNumber = pixivID.Count / 16 + 1;
+            Console.WriteLine(pixivID.Count);
+            int nowPage = 1;
+            pageNum.Text = nowPage.ToString() + " / " + pageNumber.ToString();
+
+            for (int i = 0; i < pixivPics.Length; i++)
+            {
+                Console.WriteLine(pixivID[i]);
+            }
+        }
+
         private void bangumiOP_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(opHunter.bSongURL);
         }
+
     }
 }
