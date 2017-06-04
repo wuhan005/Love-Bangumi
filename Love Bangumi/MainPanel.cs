@@ -33,6 +33,8 @@ namespace Love_Bangumi
             this.UserFace.ImageLocation = userInfo.data["FaceURL"];
             circlePath.AddArc(UserFace.DisplayRectangle, 0, 360);
             this.UserFace.Region = new Region(circlePath);
+            pixivDetail pD = new pixivDetail(52102907);
+            pD.Show();
         }
 
 

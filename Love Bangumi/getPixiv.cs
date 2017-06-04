@@ -44,7 +44,7 @@ namespace Love_Bangumi
             {
                 for (int i = 0; i < getPicJson.json()["illusts"].LongCount(); i++)
                 {
-                    backValue.Add(getPicJson.json()["illusts"][i]["id"]);
+                    backValue.Add((string)getPicJson.json()["illusts"][i]["id"]);
                 }
             }
         }

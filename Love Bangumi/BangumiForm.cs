@@ -12,6 +12,7 @@ using CCWin.SkinControl;
 using System.Net;
 using System.IO;
 using System.Collections;
+using Newtonsoft.Json;
 
 namespace Love_Bangumi
 {
@@ -149,15 +150,20 @@ namespace Love_Bangumi
                 }
 
                 //Init the UI
+                int singlePixivID = Convert.ToInt32(pixivID[i]);
+
                 pixivPics[i] = new PictureBox();
                 pixivPics[i].Name = "picBox" + Convert.ToString(i + 1);
                 pixivPics[i].Size = new Size(100, 100);
                 pixivPics[i].Location = new Point(70 + i%(pixivPics.Length/2)* 105, 40 + row * 105);
                 pixivPics[i].SizeMode = PictureBoxSizeMode.StretchImage;
 
+                pixivPics[i].Tag = singlePixivID;    //Send the pixiv ID.
+                pixivPics[i].Click += new System.EventHandler(this.pixivPics_Click);    //Click -> open the detail win.
+
                 //Get the pic detail info
                 jsonCatcher pictureCatcher = new jsonCatcher("https://api.imjad.cn/pixiv/v1/?type=illust&id=" + pixivID[i]);
-                Console.WriteLine(pixivID[i]);
+                Console.WriteLine(singlePixivID);
 
                 ////Load Pic
 
@@ -176,6 +182,14 @@ namespace Love_Bangumi
             {
                 Console.WriteLine(pixivID[i]);
             }
+        }
+
+        private void pixivPics_Click(object sender, EventArgs e)
+        {
+            //Open picture detail win.
+            PictureBox pic = (PictureBox)sender;
+            pixivDetail picDetail = new pixivDetail((int)pic.Tag);
+            picDetail.Show();
         }
 
         private void bangumiOP_Click(object sender, EventArgs e)
