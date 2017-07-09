@@ -93,12 +93,11 @@
             this.picTags.AutoSize = true;
             this.picTags.BackColor = System.Drawing.Color.DarkGray;
             this.picTags.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.picTags.ForeColor = System.Drawing.Color.White;
+            this.picTags.ForeColor = System.Drawing.Color.DimGray;
             this.picTags.Location = new System.Drawing.Point(10, 575);
             this.picTags.Name = "picTags";
-            this.picTags.Size = new System.Drawing.Size(15, 17);
+            this.picTags.Size = new System.Drawing.Size(0, 17);
             this.picTags.TabIndex = 5;
-            this.picTags.Text = "▉";
             this.picTags.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pixivDetail

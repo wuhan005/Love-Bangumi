@@ -43,7 +43,7 @@ namespace Love_Bangumi
                 {
                     this.tagsArray.Add((string)tags[i]);
                     //Console.WriteLine(tagsArray[i]);
-                    this.picTags.Text += "▉" + tagsArray[i];
+                    this.picTags.Text += " | " + tagsArray[i];
                 }
             } 
         }
