@@ -51,6 +51,7 @@ namespace Love_Bangumi
             // bangumiPicture
             // 
             this.bangumiPicture.BackColor = System.Drawing.Color.Transparent;
+            this.bangumiPicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bangumiPicture.InitialImage = global::Love_Bangumi.Properties.Resources.loading;
             this.bangumiPicture.Location = new System.Drawing.Point(22, 147);
             this.bangumiPicture.Name = "bangumiPicture";
@@ -141,7 +142,7 @@ namespace Love_Bangumi
             // 
             // skinTabControl1
             // 
-            this.skinTabControl1.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
+            this.skinTabControl1.AnimatorType = CCWin.SkinControl.AnimationType.Mosaic;
             this.skinTabControl1.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.skinTabControl1.Controls.Add(this.skinTabPage1);
             this.skinTabControl1.Controls.Add(this.skinTabPage2);
@@ -159,7 +160,7 @@ namespace Love_Bangumi
             this.skinTabControl1.PageHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl1.PageHover")));
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.skinTabControl1.PageNorml = null;
-            this.skinTabControl1.SelectedIndex = 0;
+            this.skinTabControl1.SelectedIndex = 1;
             this.skinTabControl1.Size = new System.Drawing.Size(450, 60);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 11;

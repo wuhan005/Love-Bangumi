@@ -30,6 +30,7 @@ namespace Love_Bangumi
 
         private getPixiv pixiv;
         private int nowPage = 0;    //start from 0!!
+        private bool picIsLoad = false;
 
         public bangumiForm(uint bangumiID)
         {
@@ -42,9 +43,22 @@ namespace Love_Bangumi
 
             opHunter = new MusicHunter(bName);
 
-            pixivInit();
+            this.tabControl.SelectedIndexChanged += new EventHandler(this.tabControlChanged);
+
         }
 
+        private void tabControlChanged(object sender, EventArgs e)
+        {
+            if(tabControl.SelectedTab == pagePic)
+            {
+                if (!picIsLoad)
+                {
+                    pixivInit();
+                    picIsLoad = true;
+                }
+            }
+        }
+        
         private void initEpisodes()
         {
             int count = int.Parse(bCount);
@@ -163,7 +177,6 @@ namespace Love_Bangumi
 
                 //Get the pic detail info
                 jsonCatcher pictureCatcher = new jsonCatcher("https://api.imjad.cn/pixiv/v1/?type=illust&id=" + pixivID[i]);
-                Console.WriteLine(singlePixivID);
 
                 ////Load Pic
 

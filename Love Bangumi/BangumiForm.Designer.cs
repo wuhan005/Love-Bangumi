@@ -36,10 +36,10 @@
             this.bangumiCount = new System.Windows.Forms.Label();
             this.tabControl = new CCWin.SkinControl.SkinTabControl();
             this.pageVideo = new CCWin.SkinControl.SkinTabPage();
-            this.pageMusic = new CCWin.SkinControl.SkinTabPage();
             this.pagePic = new CCWin.SkinControl.SkinTabPage();
             this.pageNum = new System.Windows.Forms.Label();
             this.pageProducts = new CCWin.SkinControl.SkinTabPage();
+            this.pageMusic = new CCWin.SkinControl.SkinTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.iconIsFinished)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangumiPicture)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -100,7 +100,6 @@
             // 
             // tabControl
             // 
-            this.tabControl.AnimationStart = true;
             this.tabControl.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
             this.tabControl.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
             this.tabControl.Controls.Add(this.pageVideo);
@@ -123,7 +122,7 @@
             this.tabControl.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.tabControl.PageNorml = null;
             this.tabControl.PageNormlTxtColor = System.Drawing.Color.White;
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(992, 323);
             this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl.TabIndex = 14;
@@ -141,19 +140,6 @@
             this.pageVideo.TabIndex = 0;
             this.pageVideo.TabItemImage = null;
             this.pageVideo.Text = "分集";
-            // 
-            // pageMusic
-            // 
-            this.pageMusic.BackColor = System.Drawing.Color.White;
-            this.pageMusic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pageMusic.Location = new System.Drawing.Point(0, 36);
-            this.pageMusic.Name = "pageMusic";
-            this.pageMusic.Padding = new System.Windows.Forms.Padding(3);
-            this.pageMusic.Size = new System.Drawing.Size(992, 287);
-            this.pageMusic.TabIndex = 1;
-            this.pageMusic.TabItemImage = null;
-            this.pageMusic.Text = "音乐";
-            this.pageMusic.UseVisualStyleBackColor = true;
             // 
             // pagePic
             // 
@@ -188,6 +174,18 @@
             this.pageProducts.TabIndex = 3;
             this.pageProducts.TabItemImage = null;
             this.pageProducts.Text = "周边";
+            // 
+            // pageMusic
+            // 
+            this.pageMusic.BackColor = System.Drawing.Color.Transparent;
+            this.pageMusic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pageMusic.Location = new System.Drawing.Point(0, 36);
+            this.pageMusic.Name = "pageMusic";
+            this.pageMusic.Padding = new System.Windows.Forms.Padding(3);
+            this.pageMusic.Size = new System.Drawing.Size(992, 287);
+            this.pageMusic.TabIndex = 1;
+            this.pageMusic.TabItemImage = null;
+            this.pageMusic.Text = "音乐";
             // 
             // bangumiForm
             // 

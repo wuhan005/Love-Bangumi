@@ -85,13 +85,14 @@
             this.picBox.Location = new System.Drawing.Point(7, 21);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(713, 464);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
             // 
             // picTags
             // 
             this.picTags.AutoSize = true;
-            this.picTags.BackColor = System.Drawing.Color.DarkGray;
+            this.picTags.BackColor = System.Drawing.Color.Transparent;
             this.picTags.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.picTags.ForeColor = System.Drawing.Color.DimGray;
             this.picTags.Location = new System.Drawing.Point(10, 575);
