@@ -12,18 +12,24 @@ namespace Love_Bangumi
 {
     class getUserInfo
     {
-        private HttpWebRequest webRequest;
-        private Stream reqStream;
-        private HttpWebResponse webResp;
-        private Stream stream;
-        private StreamReader reader;
-        private string returnJson;
-        private JObject jsonDecoder;
-
-        public Dictionary<string, string> data = new Dictionary<string, string>();
+        private uint uid;
 
         public getUserInfo(uint uid)
         {
+            this.uid = uid;
+        }
+
+        public Dictionary<string,string> UserData()
+        {
+            HttpWebRequest webRequest;
+            Stream reqStream;
+            HttpWebResponse webResp;
+            Stream stream;
+            StreamReader reader;
+            string returnJson;
+            JObject jsonDecoder;
+
+            Dictionary<string, string> data = new Dictionary<string, string>();
 
             webRequest = (HttpWebRequest)WebRequest.Create("https://space.bilibili.com/ajax/member/GetInfo");
             webRequest.Method = "POST";
@@ -46,6 +52,36 @@ namespace Love_Bangumi
             data.Add("UserName", (string)jsonDecoder["data"]["name"]);
             data.Add("FaceURL", (string)jsonDecoder["data"]["face"]);
             data.Add("Sign", (string)jsonDecoder["data"]["sign"]);
+
+            return data;
         }
+
+        public List<string> RecentBangumi()     //Back bangumi IDs!!
+        {
+            List<string> bangumiID = new List<string>();
+
+            jsonCatcher bangumiJson = new jsonCatcher("http://space.bilibili.com/ajax/Bangumi/getList?mid=" + uid.ToString() + "&page=1");
+
+            if ((bool)bangumiJson.json()["status"] == true)
+            {
+                string count = (string)bangumiJson.json()["data"]["count"];
+                string pages = (string)bangumiJson.json()["data"]["pages"];
+
+                if(int.Parse(pages) >= 2)
+                {
+                    for(int i = 0; i<15; i++)
+                    {
+                        bangumiID.Add((string)bangumiJson.json()["data"]["result"][i]["season_id"]);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("无法从Bilibili拉取番剧数据！");
+            }
+
+            return bangumiID;
+        }
+        
     }
 }

@@ -18,16 +18,9 @@ namespace Love_Bangumi
 {
     public partial class bangumiForm : CCSkinMain
     {
-        private jsonCatcher bangumiInfoJson;
-        private uint bID;
-        private string bName;
-        private string bJpName;     //Bangumi's Japanese Name.
-        private string bPicture;
-        private string bCount;
-        private string bDetail;
-        private string bIsFinished;
-        private MusicHunter opHunter;
+        private getBiliBangumi bangumiInfo;     //IMPORTANT!!
 
+        private MusicHunter opHunter;
         private getPixiv pixiv;
         private int nowPage = 0;    //start from 0!!
         private bool picIsLoad = false;
@@ -36,12 +29,13 @@ namespace Love_Bangumi
         {
             InitializeComponent();
 
-            bID = bangumiID;
+            this.bangumiInfo = new getBiliBangumi(bangumiID);
+
             initBangumiData();  //Get the bangumi data from bilibili
             initEpisodes();
-            this.Text = bName;
+            this.Text = bangumiInfo.data()["Name"];
 
-            opHunter = new MusicHunter(bName);
+            opHunter = new MusicHunter(bangumiInfo.data()["Name"]);
 
             this.tabControl.SelectedIndexChanged += new EventHandler(this.tabControlChanged);
 
@@ -61,7 +55,7 @@ namespace Love_Bangumi
         
         private void initEpisodes()
         {
-            int count = int.Parse(bCount);
+            int count = int.Parse(bangumiInfo.data()["Count"]);
             int row = 0;
             for (int i = 0; i < count; i++)
             {
@@ -81,14 +75,14 @@ namespace Love_Bangumi
 
                 ePicture.Location = new Point(0 + i % 4 * 230, 5 + row * 80);
                 ePicture.Size = new Size(96, 60);
-                ePicture.ImageLocation = (string)bangumiInfoJson.json()["result"]["episodes"][count - 1 - i]["cover"];
+                ePicture.ImageLocation = (string)bangumiInfo.episodes()[count - 1 - i]["cover"];
                 ePicture.SizeMode = PictureBoxSizeMode.StretchImage;
                 ePicture.InitialImage = Properties.Resources.loading;
 
                 eName.ArtTextStyle = ArtTextStyle.None;
                 eName.Location = new Point(105 + i % 4 * 230, 28 + row * 80);
                 eName.Size = new Size(110, 35);
-                eName.Text = (string)bangumiInfoJson.json()["result"]["episodes"][count - 1 - i]["index_title"];
+                eName.Text = (string)bangumiInfo.episodes()[count - 1 - i]["index_title"];
                 eName.Font = new Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 
                 eCountNumber.ArtTextStyle = ArtTextStyle.None;
@@ -101,7 +95,7 @@ namespace Love_Bangumi
                 this.pageVideo.Controls.Add(eCountNumber);
                 this.pageVideo.Controls.Add(ePicture);
                 this.pageVideo.Controls.Add(eBlankGround);
-                //MessageBox.Show((string)bangumiInfoJson.json()["result"]["episodes"]);
+
                 eBlankGround.Click += new EventHandler(toWebBangumi_Click);
 
                 }
@@ -110,40 +104,22 @@ namespace Love_Bangumi
         private void toWebBangumi_Click(object sender, EventArgs e)
         {
             Label l = (Label)sender;
-            System.Diagnostics.Process.Start((string)bangumiInfoJson.json()["result"]["episodes"][int.Parse(l.Text)]["webplay_url"]);
+            //System.Diagnostics.Process.Start((string)bangumiInfo.episodes()[count - 1 - i]["cover"]);
         }
 
         private void initBangumiData()
         {
-            bangumiInfoJson = new jsonCatcher("http://bangumi.bilibili.com/jsonp/seasoninfo/" + bID.ToString() + ".ver?callback=seasonListCallback&jsonp=jsonp&_=1493791405048", true);
-
-            if ((string)bangumiInfoJson.json()["message"] == "success")
-            {
-                bName = (string)bangumiInfoJson.json()["result"]["bangumi_title"];
-                bJpName = (string)bangumiInfoJson.json()["result"]["jp_title"];
-                bPicture = (string)bangumiInfoJson.json()["result"]["cover"];
-                bCount = (string)bangumiInfoJson.json()["result"]["total_count"];
-                bDetail = (string)bangumiInfoJson.json()["result"]["evaluate"];
-                bIsFinished = (string)bangumiInfoJson.json()["result"]["is_finish"];
-
-                this.bangumiName.Text = bName;
-                this.bangumiPicture.ImageLocation = bPicture;
-                this.bangumiCount.Text = "(共 " + bCount + " 集)";
-                if (bIsFinished == "0") { this.iconIsFinished.Visible = false; }
-                this.bangumiDetail.Text = bDetail;
-            }
-            else
-            {
-                MessageBox.Show("无法从Bilibili拉取番剧数据！");
-            }
+            this.bangumiName.Text = bangumiInfo.data()["Name"];
+            this.bangumiPicture.ImageLocation = bangumiInfo.data()["Picture"];
+            this.bangumiCount.Text = "(共 " + bangumiInfo.data()["Count"] + " 集)";
+            if (bangumiInfo.data()["IsFinish"] == "0") { this.iconIsFinished.Visible = false; }
+            this.bangumiDetail.Text = bangumiInfo.data()["Detail"];
         }
 
         //Get the bangumi pictures from pixiv!
         private void pixivInit()
         {
-
-
-            pixiv = new getPixiv(this.bJpName);     //Search this bangumi's japanese name.
+            pixiv = new getPixiv(bangumiInfo.data()["JapanName"]);     //Search this bangumi's japanese name.
             ArrayList pixivID = pixiv.pic();        //Get the pictures' pixiv ID.
      
             PictureBox[] pixivPics;
@@ -187,7 +163,6 @@ namespace Love_Bangumi
             }
 
             int pageNumber = pixivID.Count / 16 + 1;
-            Console.WriteLine(pixivID.Count);
             int nowPage = 1;
             pageNum.Text = nowPage.ToString() + " / " + pageNumber.ToString();
 

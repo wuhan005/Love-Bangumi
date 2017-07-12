@@ -17,42 +17,42 @@ namespace Love_Bangumi
 {
     public partial class MainPanel : CCSkinMain
     {
-        private string[] recentBangumi;
         private static uint biliID = 3788683;
         //private bangumiTimeLine timeLine = new bangumiTimeLine();
         private getUserInfo userInfo = new getUserInfo(biliID);
+        private getBiliBangumi getFirstBangumi;
         private GraphicsPath circlePath = new GraphicsPath();   //Used to cut the user face to circle.
 
         public MainPanel()
         {
             InitializeComponent();
-            getBangumiInfo();
-            this.UserName.Text = userInfo.data["UserName"];
-            this.UserSign.Text = userInfo.data["Sign"];
+            getRecentBangumi();
+            this.UserName.Text = userInfo.UserData()["UserName"];
+            this.UserSign.Text = userInfo.UserData()["Sign"];
 
-            this.UserFace.ImageLocation = userInfo.data["FaceURL"];
+            this.UserFace.ImageLocation = userInfo.UserData()["FaceURL"];
             circlePath.AddArc(UserFace.DisplayRectangle, 0, 360);
             this.UserFace.Region = new Region(circlePath);
         }
 
 
-        private void getBangumiInfo()
+        private void getRecentBangumi()
         {
-            getBiliBangumi getBangumi = new getBiliBangumi(biliID);
-            recentBangumi = getBangumi.recentBangumi();
+            string firstBangumiID = userInfo.RecentBangumi()[0];
+            getFirstBangumi = new getBiliBangumi(uint.Parse(firstBangumiID));
 
-            this.bangumiName.Text = recentBangumi[0];
-            this.bangumiPicture.ImageLocation = recentBangumi[1];
-            if(recentBangumi[2] == "0")
+            this.bangumiName.Text = getFirstBangumi.data()["Name"];
+            this.bangumiPicture.ImageLocation = getFirstBangumi.data()["Picture"];
+            if(getFirstBangumi.data()["IsFinish"] == "0")    //0: not finished.
             {
                 this.iconIsFinished.Visible = false;
             }
-            this.bangumiDetail.Text = "（共 " + recentBangumi[3] + " 集）";
+            this.bangumiDetail.Text = "（共 " + getFirstBangumi.data()["Count"] + " 集）";
         }
 
         private void bangumiPicture_Click(object sender, EventArgs e)
         {
-            bangumiForm recentBangumiForm = new bangumiForm(uint.Parse(recentBangumi[5]));
+            bangumiForm recentBangumiForm = new bangumiForm(uint.Parse(getFirstBangumi.data()["ID"]));
             recentBangumiForm.Show();
         }
 
